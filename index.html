@@ -292,33 +292,13 @@ section { padding: 80px 2rem; }
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  height: 480px;
+  height: 600px;
 }
 .chatbot-frame iframe {
-  width: 100%; height: 100%;
-  border: none;
-}
-.chatbot-placeholder {
+  width: 100%;
   height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 1rem; text-align: center;
-  padding: 2rem;
-}
-.chatbot-placeholder .big-icon { font-size: 48px; }
-.chatbot-placeholder h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px; letter-spacing: 1px;
-}
-.chatbot-placeholder p { font-size: 14px; color: var(--text-muted); }
-.chatbot-placeholder code {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  background: var(--dark-3);
-  padding: 8px 16px;
-  border-radius: 4px;
-  color: var(--orange-light);
-  border: 1px solid var(--border);
+  border: none;
+  border-radius: 8px;
 }
 
 /* COMMUNITY BOARD */
@@ -356,10 +336,6 @@ section { padding: 80px 2rem; }
 .pin-author { font-size: 12px; color: var(--text-muted); }
 .pin-likes { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; cursor: pointer; }
 .pin-likes:hover { color: var(--orange-light); }
-.board-post-btn {
-  display: flex; justify-content: center;
-  margin-top: 2rem;
-}
 
 /* APP DOWNLOAD */
 .app-section {
@@ -772,13 +748,14 @@ footer {
       </ul>
     </div>
     <div class="chatbot-frame">
-     <div class="chatbot-placeholder">
-  <div class="big-icon">🔧</div>
-  <h3>Embed Your Chatbot Here</h3>
-  <p>Replace this section with your Streamlit iframe</p>
-  <code>&lt;iframe src="https://your-app.streamlit.app" 
-  width="100%" height="100%"&gt;&lt;/iframe&gt;</code>
-</div>
+      <iframe
+        src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allow="microphone"
+        style="border: none; border-radius: 8px;">
+      </iframe>
     </div>
   </div>
 </section>
