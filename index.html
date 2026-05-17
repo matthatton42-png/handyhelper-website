@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Handy Helper - DIY Home Services Assistant</title>
+<link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -102,24 +103,31 @@ section { padding: 80px 2rem; }
 .pin-author { font-size: 12px; color: var(--text-muted); }
 .pin-likes { font-size: 12px; color: var(--text-muted); cursor: pointer; }
 .pin-likes:hover { color: var(--orange-light); }
-.app-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.app-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+/* SHORTCUT SECTION */
+.shortcut-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.shortcut-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.shortcut-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.shortcut-btn { display: flex; align-items: center; gap: 16px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; text-decoration: none; color: var(--cream); transition: all 0.2s; cursor: pointer; border: none; width: 100%; text-align: left; }
+.shortcut-btn:hover { border-color: rgba(232,82,26,0.4); background: var(--dark-3); }
+.shortcut-icon { font-size: 28px; }
+.shortcut-text { flex: 1; }
+.shortcut-text small { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+.shortcut-text strong { font-size: 16px; font-weight: 500; }
+.shortcut-visual { display: flex; justify-content: center; }
 .phone-frame { width: 240px; background: var(--dark-3); border: 2px solid rgba(232,82,26,0.3); border-radius: 36px; padding: 16px; margin: 0 auto; }
 .phone-notch { width: 80px; height: 24px; background: var(--dark); border-radius: 12px; margin: 0 auto 12px; }
 .phone-screen { background: var(--dark); border-radius: 20px; padding: 16px; height: 360px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
 .phone-header { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
 .phone-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--orange); }
+.phone-home-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+.phone-app-icon { width: 48px; height: 48px; background: var(--orange); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 14px; color: white; margin: 0 auto; }
+.phone-app-label { font-size: 9px; color: var(--text-muted); text-align: center; margin-top: 4px; }
+.phone-app-icon.placeholder { background: var(--dark-3); border: 1px solid var(--border); }
 .phone-msg { padding: 8px 10px; border-radius: 8px; font-size: 11px; line-height: 1.4; }
 .phone-msg.bot { background: var(--dark-3); border: 1px solid var(--border); align-self: flex-start; max-width: 85%; }
 .phone-msg.user { background: var(--orange); color: white; align-self: flex-end; max-width: 75%; }
-.app-downloads { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-.download-btn { display: flex; align-items: center; gap: 16px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; text-decoration: none; color: var(--cream); transition: all 0.2s; cursor: pointer; }
-.download-btn:hover { border-color: rgba(232,82,26,0.4); background: var(--dark-3); }
-.download-icon { font-size: 28px; }
-.download-text { flex: 1; }
-.download-text small { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
-.download-text strong { font-size: 16px; font-weight: 500; }
-.coming-soon { font-family: 'DM Mono', monospace; font-size: 10px; background: rgba(232,82,26,0.15); color: var(--orange-light); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
+
 .ads-section { background: var(--dark); }
 .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
 .ad-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; text-align: center; position: relative; transition: border-color 0.2s; }
@@ -146,6 +154,17 @@ section { padding: 80px 2rem; }
 .contact-item-icon { width: 40px; height: 40px; min-width: 40px; background: rgba(232,82,26,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
 .contact-item h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
 .contact-item p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+/* EMAIL BUTTON STYLES */
+.email-actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.email-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 4px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; border: none; font-family: 'DM Sans', sans-serif; }
+.email-btn-mail { background: var(--orange); color: white; text-decoration: none; }
+.email-btn-mail:hover { background: var(--orange-dark); }
+.email-btn-copy { background: var(--dark-3); color: var(--cream); border: 1px solid var(--border); }
+.email-btn-copy:hover { border-color: var(--orange); color: var(--orange-light); }
+.copy-confirm { display: none; font-size: 11px; color: var(--success); align-items: center; gap: 4px; margin-top: 4px; }
+.copy-confirm.show { display: flex; }
+
 footer { background: var(--dark); border-top: 1px solid var(--border); padding: 3rem 2rem 2rem; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
@@ -165,13 +184,26 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .modal p { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; }
 .modal-close { float: right; background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; }
 .modal-close:hover { color: var(--cream); }
+
+/* INSTALL MODAL */
+.install-steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+.install-step { display: flex; gap: 12px; align-items: flex-start; }
+.install-step-num { width: 24px; height: 24px; min-width: 24px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: white; }
+.install-step p { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.install-step strong { color: var(--cream); }
+.install-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.install-tab { padding: 6px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text-muted); font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+.install-tab.active { background: var(--orange); border-color: var(--orange); color: white; }
+.install-content { display: none; }
+.install-content.active { display: block; }
+
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-chatbot { height: 400px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .features-grid { grid-template-columns: 1fr 1fr; }
   .chatbot-inner { grid-template-columns: 1fr; }
-  .app-inner { grid-template-columns: 1fr; }
+  .shortcut-inner { grid-template-columns: 1fr; }
   .ads-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
@@ -187,7 +219,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <a href="#features">Features</a>
     <a href="#chat">AI Assistant</a>
     <a href="#community">Community</a>
-    <a href="#app">Get the App</a>
+    <a href="#shortcut">Get the App</a>
     <a href="#advertise">Advertise</a>
     <a href="#contact">Contact</a>
     <a href="#chat" class="nav-cta">Try for Free</a>
@@ -202,7 +234,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <p>Your 24/7 AI-powered home repair assistant. Get expert guidance on any DIY project — from leaky faucets to full renovations — instantly.</p>
       <div class="hero-actions">
         <a href="#chat" class="btn-primary">Ask Handy Helper ↗</a>
-        <a href="#app" class="btn-secondary">Download the App</a>
+        <a href="#shortcut" class="btn-secondary">Add to Home Screen</a>
       </div>
     </div>
     <div class="hero-chatbot">
@@ -226,7 +258,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div><div class="stat-num">37+</div><div class="stat-label">Project Categories</div></div>
     <div><div class="stat-num">24/7</div><div class="stat-label">AI Availability</div></div>
     <div><div class="stat-num">$0</div><div class="stat-label">To Get Started</div></div>
-    <div><div class="stat-num">LIVE</div><div class="stat-label">Technician Support</div></div>
+    <div><div class="stat-num">FREE</div><div class="stat-label">No App Needed</div></div>
   </div>
 </div>
 
@@ -240,7 +272,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="feature-card"><div class="feature-icon">🌐</div><h3>Web Search</h3><p>Real-time search means your answers are always current with the latest products, codes, and techniques.</p></div>
       <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Safety First</h3><p>Built-in safety tiers alert you to risks and recommend certified professionals for dangerous work.</p></div>
       <div class="feature-card"><div class="feature-icon">👷</div><h3>Live Technicians</h3><p>Need a real expert? Connect with a live on-call technician Mon–Fri 8am–6pm, Sat 9am–1pm.</p></div>
-      <div class="feature-card"><div class="feature-icon">📱</div><h3>Mobile App</h3><p>Get Handy Helper on iOS and Android. Ask questions hands-free while you work.</p></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><h3>Home Screen Shortcut</h3><p>Add Handy Helper to your phone or desktop home screen for instant one-tap access — no app store needed.</p></div>
       <div class="feature-card"><div class="feature-icon">🏘️</div><h3>Community Board</h3><p>Share tips, ask neighbors, and post your completed projects on our digital pegboard.</p></div>
     </div>
   </div>
@@ -315,43 +347,63 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
-<section id="app" class="app-section">
-  <div class="section-inner app-inner">
+<!-- HOME SCREEN SHORTCUT SECTION -->
+<section id="shortcut" class="shortcut-section">
+  <div class="section-inner shortcut-inner">
     <div>
-      <div class="section-tag">// MOBILE APP</div>
-      <h2 class="section-title">Take Handy Helper Everywhere</h2>
-      <p class="section-sub">Download the app and get hands-free DIY guidance right at the job site. Ask questions while your hands are full.</p>
-      <div class="app-downloads">
-        <a class="download-btn" href="#" onclick="alert('iOS App coming soon! Sign up for early access at handhelper.company')">
-          <div class="download-icon">🍎</div>
-          <div class="download-text"><small>Download on the</small><strong>App Store</strong></div>
-          <span class="coming-soon">COMING SOON</span>
-        </a>
-        <a class="download-btn" href="#" onclick="alert('Android App coming soon! Sign up for early access at handhelper.company')">
-          <div class="download-icon">🤖</div>
-          <div class="download-text"><small>Get it on</small><strong>Google Play</strong></div>
-          <span class="coming-soon">COMING SOON</span>
-        </a>
-        <a class="download-btn" href="#chat">
-          <div class="download-icon">🌐</div>
-          <div class="download-text"><small>Use in your browser</small><strong>Web App — Available Now</strong></div>
-          <span style="font-size:18px;">→</span>
-        </a>
+      <div class="section-tag">// QUICK ACCESS</div>
+      <h2 class="section-title">Add to Your Home Screen</h2>
+      <p class="section-sub">Get instant one-tap access to Handy Helper right from your phone home screen or computer desktop — no app store required.</p>
+      <div class="shortcut-cards">
+        <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('ios')">
+          <div class="shortcut-icon">🍎</div>
+          <div class="shortcut-text"><small>iPhone &amp; iPad</small><strong>Add to Home Screen</strong></div>
+          <span style="font-size:18px; color:var(--orange);">→</span>
+        </button>
+        <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('android')">
+          <div class="shortcut-icon">🤖</div>
+          <div class="shortcut-text"><small>Android Phone &amp; Tablet</small><strong>Add to Home Screen</strong></div>
+          <span style="font-size:18px; color:var(--orange);">→</span>
+        </button>
+        <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('desktop')">
+          <div class="shortcut-icon">🖥️</div>
+          <div class="shortcut-text"><small>Windows, Mac &amp; Chromebook</small><strong>Add to Desktop</strong></div>
+          <span style="font-size:18px; color:var(--orange);">→</span>
+        </button>
       </div>
-      <p style="font-size:12px; color:var(--text-muted); margin-top:1rem;">Sign up below to be notified when the iOS and Android apps launch.</p>
+      <p style="font-size:12px; color:var(--text-muted); margin-top:1rem;">Works on all devices and browsers. No download required.</p>
     </div>
-    <div class="phone-frame">
-      <div class="phone-notch"></div>
-      <div class="phone-screen">
-        <div class="phone-header">
-          <div class="chat-avatar" style="width:28px;height:28px;font-size:14px;border-radius:6px;">HH</div>
-          <div class="phone-logo">HandyHelper</div>
+    <div class="shortcut-visual">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div class="chat-avatar" style="width:28px;height:28px;font-size:14px;border-radius:6px;">HH</div>
+            <div class="phone-logo">9:41 AM</div>
+          </div>
+          <p style="font-size:10px; color:var(--text-muted); margin-top:4px;">Home Screen</p>
+          <div class="phone-home-grid">
+            <div>
+              <div class="phone-app-icon">HH</div>
+              <div class="phone-app-label">Handy Helper</div>
+            </div>
+            <div>
+              <div class="phone-app-icon placeholder"></div>
+              <div class="phone-app-label"></div>
+            </div>
+            <div>
+              <div class="phone-app-icon placeholder"></div>
+              <div class="phone-app-label"></div>
+            </div>
+            <div>
+              <div class="phone-app-icon placeholder"></div>
+              <div class="phone-app-label"></div>
+            </div>
+          </div>
+          <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border);">
+            <div class="phone-msg bot" style="align-self:flex-start;">Hey! What are we fixing today? 🔧</div>
+          </div>
         </div>
-        <div class="phone-msg bot">Hey! What are we fixing today? 🔧</div>
-        <div class="phone-msg user">My deck boards are rotting</div>
-        <div class="phone-msg bot">I can help! First, let's assess the damage. Are more than 30% of boards affected?</div>
-        <div class="phone-msg user">Maybe 40%</div>
-        <div class="phone-msg bot">At 40%, full replacement is smarter than patching. Here's your material list and step-by-step plan...</div>
       </div>
     </div>
   </div>
@@ -416,7 +468,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <select>
             <option>General Inquiry</option>
             <option>Advertising Inquiry</option>
-            <option>App Early Access</option>
+            <option>Home Screen Setup Help</option>
             <option>Live Technician Request</option>
             <option>Partnership Opportunity</option>
             <option>Technical Support</option>
@@ -436,15 +488,23 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">⏰</div>
-          <div><h4>Live Technician Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>AI Assistant: 24/7</p></div>
+          <div><h4>Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>AI Assistant: 24/7</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <h4>Email Us</h4>
+            <p style="font-family:'DM Mono',monospace; color:var(--orange-light); font-size:13px;">yourhelper@handyhelper.company</p>
+            <div class="email-actions">
+              <a href="mailto:yourhelper@handyhelper.company" class="email-btn email-btn-mail">✉️ Open in Mail</a>
+              <button class="email-btn email-btn-copy" onclick="copyEmail()">📋 Copy Address</button>
+            </div>
+            <div class="copy-confirm" id="copyConfirm">✓ Email address copied!</div>
+          </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">🌐</div>
           <div><h4>Website</h4><p>handhelper.company</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📱</div>
-          <div><h4>App Early Access</h4><p>Sign up via the contact form to be first to know when our iOS and Android apps launch.</p></div>
         </div>
       </div>
     </div>
@@ -461,7 +521,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="footer-col">
         <h4>Product</h4>
         <a href="#chat">AI Assistant</a>
-        <a href="#app">Mobile App</a>
+        <a href="#shortcut">Home Screen</a>
         <a href="#community">Community Board</a>
         <a href="#features">Features</a>
       </div>
@@ -491,6 +551,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </div>
 </footer>
 
+<!-- POST MODAL -->
 <div class="modal-overlay" id="postModal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal">
     <button class="modal-close" onclick="document.getElementById('postModal').classList.remove('open')">✕</button>
@@ -512,6 +573,70 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     </div>
   </div>
 </div>
+
+<!-- INSTALL MODAL -->
+<div class="modal-overlay" id="installModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('installModal').classList.remove('open')">✕</button>
+    <h3>Add to Home Screen</h3>
+    <p>Follow these steps for your device to get instant access to Handy Helper</p>
+    <div class="install-tabs">
+      <button class="install-tab active" id="tab-ios" onclick="showTab('ios')">🍎 iPhone</button>
+      <button class="install-tab" id="tab-android" onclick="showTab('android')">🤖 Android</button>
+      <button class="install-tab" id="tab-desktop" onclick="showTab('desktop')">🖥️ Desktop</button>
+    </div>
+
+    <div class="install-content active" id="content-ios">
+      <div class="install-steps">
+        <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Safari</strong> on your iPhone or iPad and go to <strong>handhelper.company</strong></p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>Share button</strong> at the bottom of the screen (the box with an arrow pointing up)</p></div>
+        <div class="install-step"><div class="install-step-num">3</div><p>Scroll down and tap <strong>"Add to Home Screen"</strong></p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> in the top right corner</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
+      </div>
+    </div>
+
+    <div class="install-content" id="content-android">
+      <div class="install-steps">
+        <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your Android device and go to <strong>handhelper.company</strong></p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>three dots menu</strong> in the top right corner</p></div>
+        <div class="install-step"><div class="install-step-num">3</div><p>Tap <strong>"Add to Home screen"</strong></p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> to confirm</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
+      </div>
+    </div>
+
+    <div class="install-content" id="content-desktop">
+      <div class="install-steps">
+        <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your computer and go to <strong>handhelper.company</strong></p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>Look for the <strong>install icon</strong> (a monitor with a down arrow) in the address bar on the right side</p></div>
+        <div class="install-step"><div class="install-step-num">3</div><p>Click it and select <strong>"Install"</strong></p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>Handy Helper opens like a desktop app and a shortcut appears on your desktop</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong> instead</p></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.install-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('content-' + tab).classList.add('active');
+}
+
+function copyEmail() {
+  navigator.clipboard.writeText('yourhelper@handyhelper.company').then(function() {
+    var confirm = document.getElementById('copyConfirm');
+    confirm.classList.add('show');
+    setTimeout(function() { confirm.classList.remove('show'); }, 3000);
+  }).catch(function() {
+    prompt('Copy this email address:', 'yourhelper@handyhelper.company');
+  });
+}
+</script>
 
 </body>
 </html>
