@@ -29,11 +29,7 @@ nav {
   padding: 0 2rem; height: 64px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif; font-size: 28px;
-  color: var(--orange); letter-spacing: 2px;
-  text-decoration: none; cursor: pointer; transition: opacity 0.2s;
-}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--orange); letter-spacing: 2px; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
 .nav-logo:hover { opacity: 0.85; }
 .nav-logo span { color: var(--cream); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -41,19 +37,8 @@ nav {
 .nav-links a:hover { color: var(--cream); }
 .nav-cta { background: var(--orange); color: white !important; padding: 8px 20px; border-radius: 4px; }
 .nav-cta:hover { background: var(--orange-dark); }
-.hero {
-  min-height: 100vh; padding: 120px 2rem 80px;
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  gap: 4rem; align-items: center;
-  max-width: 1200px; margin: 0 auto;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(232,82,26,0.15); border: 1px solid rgba(232,82,26,0.3);
-  padding: 6px 14px; border-radius: 100px;
-  font-size: 12px; font-family: 'DM Mono', monospace;
-  color: var(--orange-light); margin-bottom: 1.5rem; letter-spacing: 1px;
-}
+.hero { min-height: 100vh; padding: 120px 2rem 80px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,82,26,0.15); border: 1px solid rgba(232,82,26,0.3); padding: 6px 14px; border-radius: 100px; font-size: 12px; font-family: 'DM Mono', monospace; color: var(--orange-light); margin-bottom: 1.5rem; letter-spacing: 1px; }
 .badge-dot { width: 6px; height: 6px; background: var(--orange-light); border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 8vw, 96px); line-height: 0.95; letter-spacing: 2px; margin-bottom: 1.5rem; }
@@ -103,12 +88,10 @@ section { padding: 80px 2rem; }
 .pin-author { font-size: 12px; color: var(--text-muted); }
 .pin-likes { font-size: 12px; color: var(--text-muted); cursor: pointer; }
 .pin-likes:hover { color: var(--orange-light); }
-
-/* SHORTCUT SECTION */
 .shortcut-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .shortcut-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .shortcut-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-.shortcut-btn { display: flex; align-items: center; gap: 16px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; text-decoration: none; color: var(--cream); transition: all 0.2s; cursor: pointer; border: none; width: 100%; text-align: left; }
+.shortcut-btn { display: flex; align-items: center; gap: 16px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; text-decoration: none; color: var(--cream); transition: all 0.2s; cursor: pointer; width: 100%; text-align: left; }
 .shortcut-btn:hover { border-color: rgba(232,82,26,0.4); background: var(--dark-3); }
 .shortcut-icon { font-size: 28px; }
 .shortcut-text { flex: 1; }
@@ -126,8 +109,6 @@ section { padding: 80px 2rem; }
 .phone-app-icon.placeholder { background: var(--dark-3); border: 1px solid var(--border); }
 .phone-msg { padding: 8px 10px; border-radius: 8px; font-size: 11px; line-height: 1.4; }
 .phone-msg.bot { background: var(--dark-3); border: 1px solid var(--border); align-self: flex-start; max-width: 85%; }
-.phone-msg.user { background: var(--orange); color: white; align-self: flex-end; max-width: 75%; }
-
 .ads-section { background: var(--dark); }
 .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
 .ad-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; text-align: center; position: relative; transition: border-color 0.2s; }
@@ -154,8 +135,6 @@ section { padding: 80px 2rem; }
 .contact-item-icon { width: 40px; height: 40px; min-width: 40px; background: rgba(232,82,26,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
 .contact-item h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
 .contact-item p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-/* EMAIL BUTTON STYLES */
 .email-actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; }
 .email-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 4px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; border: none; font-family: 'DM Sans', sans-serif; }
 .email-btn-mail { background: var(--orange); color: white; text-decoration: none; }
@@ -164,7 +143,6 @@ section { padding: 80px 2rem; }
 .email-btn-copy:hover { border-color: var(--orange); color: var(--orange-light); }
 .copy-confirm { display: none; font-size: 11px; color: var(--success); align-items: center; gap: 4px; margin-top: 4px; }
 .copy-confirm.show { display: flex; }
-
 footer { background: var(--dark); border-top: 1px solid var(--border); padding: 3rem 2rem 2rem; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
@@ -184,8 +162,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .modal p { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; }
 .modal-close { float: right; background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; }
 .modal-close:hover { color: var(--cream); }
-
-/* INSTALL MODAL */
 .install-steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
 .install-step { display: flex; gap: 12px; align-items: flex-start; }
 .install-step-num { width: 24px; height: 24px; min-width: 24px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: white; }
@@ -196,7 +172,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .install-tab.active { background: var(--orange); border-color: var(--orange); color: white; }
 .install-content { display: none; }
 .install-content.active { display: block; }
-
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-chatbot { height: 400px; }
@@ -271,9 +246,9 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="feature-card"><div class="feature-icon">🔧</div><h3>37+ Categories</h3><p>From plumbing and electrical to HVAC and smart home devices — we cover every corner of your home.</p></div>
       <div class="feature-card"><div class="feature-icon">🌐</div><h3>Web Search</h3><p>Real-time search means your answers are always current with the latest products, codes, and techniques.</p></div>
       <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Safety First</h3><p>Built-in safety tiers alert you to risks and recommend certified professionals for dangerous work.</p></div>
-      <div class="feature-card"><div class="feature-icon">👷</div><h3>Live Technicians</h3><p>Need a real expert? Connect with a live on-call technician Mon–Fri 8am–6pm, Sat 9am–1pm.</p></div>
       <div class="feature-card"><div class="feature-icon">📱</div><h3>Home Screen Shortcut</h3><p>Add Handy Helper to your phone or desktop home screen for instant one-tap access — no app store needed.</p></div>
       <div class="feature-card"><div class="feature-icon">🏘️</div><h3>Community Board</h3><p>Share tips, ask neighbors, and post your completed projects on our digital pegboard.</p></div>
+      <div class="feature-card"><div class="feature-icon">💡</div><h3>Always Learning</h3><p>Our AI stays current with real-time web search so you always get the most up-to-date advice and product recommendations.</p></div>
     </div>
   </div>
 </section>
@@ -347,7 +322,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
-<!-- HOME SCREEN SHORTCUT SECTION -->
 <section id="shortcut" class="shortcut-section">
   <div class="section-inner shortcut-inner">
     <div>
@@ -387,21 +361,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
               <div class="phone-app-icon">HH</div>
               <div class="phone-app-label">Handy Helper</div>
             </div>
-            <div>
-              <div class="phone-app-icon placeholder"></div>
-              <div class="phone-app-label"></div>
-            </div>
-            <div>
-              <div class="phone-app-icon placeholder"></div>
-              <div class="phone-app-label"></div>
-            </div>
-            <div>
-              <div class="phone-app-icon placeholder"></div>
-              <div class="phone-app-label"></div>
-            </div>
+            <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
+            <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
+            <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
           </div>
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border);">
-            <div class="phone-msg bot" style="align-self:flex-start;">Hey! What are we fixing today? 🔧</div>
+            <div class="phone-msg bot">Hey! What are we fixing today? 🔧</div>
           </div>
         </div>
       </div>
@@ -469,7 +434,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
             <option>General Inquiry</option>
             <option>Advertising Inquiry</option>
             <option>Home Screen Setup Help</option>
-            <option>Live Technician Request</option>
             <option>Partnership Opportunity</option>
             <option>Technical Support</option>
           </select>
@@ -484,11 +448,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">📍</div>
-          <div><h4>Service Area</h4><p>Cincinnati, OH and surrounding areas. Remote AI assistance available nationwide.</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">⏰</div>
-          <div><h4>Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>AI Assistant: 24/7</p></div>
+          <div><h4>Service Area</h4><p>AI assistance available nationwide.</p></div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">✉️</div>
@@ -529,7 +489,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <h4>Business</h4>
         <a href="#advertise">Advertise</a>
         <a href="#contact">Partnership</a>
-        <a href="#contact">Live Technician</a>
         <a href="#contact">Press</a>
       </div>
       <div class="footer-col">
@@ -585,7 +544,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <button class="install-tab" id="tab-android" onclick="showTab('android')">🤖 Android</button>
       <button class="install-tab" id="tab-desktop" onclick="showTab('desktop')">🖥️ Desktop</button>
     </div>
-
     <div class="install-content active" id="content-ios">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Safari</strong> on your iPhone or iPad and go to <strong>handhelper.company</strong></p></div>
@@ -595,7 +553,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
       </div>
     </div>
-
     <div class="install-content" id="content-android">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your Android device and go to <strong>handhelper.company</strong></p></div>
@@ -605,7 +562,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
       </div>
     </div>
-
     <div class="install-content" id="content-desktop">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your computer and go to <strong>handhelper.company</strong></p></div>
@@ -615,7 +571,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong> instead</p></div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -626,7 +581,6 @@ function showTab(tab) {
   document.getElementById('tab-' + tab).classList.add('active');
   document.getElementById('content-' + tab).classList.add('active');
 }
-
 function copyEmail() {
   navigator.clipboard.writeText('yourhelper@handyhelper.company').then(function() {
     var confirm = document.getElementById('copyConfirm');
