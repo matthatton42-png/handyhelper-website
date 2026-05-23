@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    { "source": "/fix-running-toilet", "destination": "/fix-running-toilet.html" },
+    { "source": "/circuit-breaker-tripping", "destination": "/circuit-breaker-tripping.html" },
+    { "source": "/patch-drywall", "destination": "/patch-drywall.html" },
+    { "source": "/fix-leaky-faucet", "destination": "/fix-leaky-faucet.html" },
+    { "source": "/install-ceiling-fan", "destination": "/install-ceiling-fan.html" },
+    { "source": "/unclog-drain", "destination": "/unclog-drain.html" },
+    { "source": "/paint-room", "destination": "/paint-room.html" },
+    { "source": "/replace-outlet", "destination": "/replace-outlet.html" },
+    { "source": "/fix-squeaky-floor", "destination": "/fix-squeaky-floor.html" },
+    { "source": "/caulk-bathroom", "destination": "/caulk-bathroom.html" },
+    { "source": "/tips/teflon-tape-pipe-fittings", "destination": "/tips-teflon-tape-pipe-fittings.html" },
+    { "source": "/tips/gfci-outlet-moisture", "destination": "/tips-gfci-outlet-moisture.html" },
+    { "source": "/tips/prime-before-painting", "destination": "/tips-prime-before-painting.html" },
+    { "source": "/tips/hvac-filter-60-days", "destination": "/tips-hvac-filter-60-days.html" },
+    { "source": "/tips/laminate-acclimate-48-hours", "destination": "/tips-laminate-acclimate-48-hours.html" }
+  ]
+}
