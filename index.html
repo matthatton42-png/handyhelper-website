@@ -3,32 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Handy Helper - DIY Home Services Assistant</title>
+<title>Handy Helper - Free AI-Powered DIY Home Repair Assistant</title>
+<meta name="description" content="Get free expert DIY guidance on any home repair project. AI-powered assistant covers plumbing, electrical, HVAC, flooring, painting and 37+ categories. Available 24/7 at handyhelper.company.">
+<meta name="keywords" content="DIY home repair, free home improvement help, fix running toilet, patch drywall, circuit breaker tripping, AI home assistant, handyman guide">
+<meta property="og:title" content="Handy Helper - Free AI-Powered DIY Home Repair Assistant">
+<meta property="og:description" content="Get free expert DIY guidance on any home repair project. Available 24/7.">
+<meta property="og:url" content="https://handyhelper.company">
+<link rel="canonical" href="https://handyhelper.company">
 <link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --orange: #E8521A;
-  --orange-dark: #C43E0A;
-  --orange-light: #FF7A45;
-  --cream: #F5F0E8;
-  --dark: #1A1612;
-  --dark-2: #2C2520;
-  --dark-3: #3D3530;
-  --text-muted: #8A7E76;
-  --success: #2D7D46;
-  --border: rgba(232,82,26,0.15);
+  --orange: #E8521A; --orange-dark: #C43E0A; --orange-light: #FF7A45;
+  --cream: #F5F0E8; --dark: #1A1612; --dark-2: #2C2520; --dark-3: #3D3530;
+  --text-muted: #8A7E76; --success: #2D7D46; --border: rgba(232,82,26,0.15);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--cream); overflow-x: hidden; }
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(26,22,18,0.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2rem; height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,22,18,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--orange); letter-spacing: 2px; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
 .nav-logo:hover { opacity: 0.85; }
 .nav-logo span { color: var(--cream); }
@@ -75,10 +68,24 @@ section { padding: 80px 2rem; }
 .chatbot-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
 .chatbot-frame { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 600px; }
 .chatbot-frame iframe { width: 100%; height: 100%; border: none; border-radius: 8px; }
-.board-section { background: var(--dark); }
+
+/* GUIDES SECTION */
+.guides-section { background: var(--dark); }
+.guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.guide-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-decoration: none; color: var(--cream); transition: border-color 0.2s, transform 0.2s; display: block; }
+.guide-card:hover { border-color: rgba(232,82,26,0.4); transform: translateY(-2px); }
+.guide-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+.guide-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(232,82,26,0.15); color: var(--orange-light); }
+.guide-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.4; }
+.guide-card p { font-size: 12px; color: var(--text-muted); }
+.guide-arrow { font-size: 16px; color: var(--orange); }
+
+/* COMMUNITY BOARD */
+.board-section { background: var(--dark-2); border-top: 1px solid var(--border); }
 .board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
-.pin { background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s; }
+.pin { background: var(--dark); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s; }
 .pin:hover { border-color: rgba(232,82,26,0.35); transform: translateY(-2px); }
+.pin-link { text-decoration: none; color: inherit; display: block; }
 .pin-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
 .pin-category { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(232,82,26,0.15); color: var(--orange-light); }
 .pin-date { font-size: 11px; color: var(--text-muted); }
@@ -88,6 +95,8 @@ section { padding: 80px 2rem; }
 .pin-author { font-size: 12px; color: var(--text-muted); }
 .pin-likes { font-size: 12px; color: var(--text-muted); cursor: pointer; }
 .pin-likes:hover { color: var(--orange-light); }
+.pin-read-more { font-size: 11px; color: var(--orange-light); font-family: 'DM Mono', monospace; }
+
 .shortcut-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .shortcut-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .shortcut-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
@@ -193,6 +202,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#chat">AI Assistant</a>
+    <a href="#guides">DIY Guides</a>
     <a href="#community">Community</a>
     <a href="#shortcut">Get the App</a>
     <a href="#advertise">Advertise</a>
@@ -220,10 +230,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <div class="chat-status"><div class="status-dot"></div> Online now</div>
         </div>
       </div>
-      <iframe
-        src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/?embedded=true"
-        width="100%" height="100%" frameborder="0" allow="microphone" style="border:none;">
-      </iframe>
+      <iframe src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/?embedded=true" width="100%" height="100%" frameborder="0" allow="microphone" style="border:none;"></iframe>
     </div>
   </div>
 </section>
@@ -246,9 +253,9 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="feature-card"><div class="feature-icon">🔧</div><h3>37+ Categories</h3><p>From plumbing and electrical to HVAC and smart home devices — we cover every corner of your home.</p></div>
       <div class="feature-card"><div class="feature-icon">🌐</div><h3>Web Search</h3><p>Real-time search means your answers are always current with the latest products, codes, and techniques.</p></div>
       <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Safety First</h3><p>Built-in safety tiers alert you to risks and recommend certified professionals for dangerous work.</p></div>
+      <div class="feature-card"><div class="feature-icon">📸</div><h3>Photo Analysis</h3><p>Upload a photo of your problem and get advice tailored to exactly what Handy Helper sees in the image.</p></div>
       <div class="feature-card"><div class="feature-icon">📱</div><h3>Home Screen Shortcut</h3><p>Add Handy Helper to your phone or desktop home screen for instant one-tap access — no app store needed.</p></div>
       <div class="feature-card"><div class="feature-icon">🏘️</div><h3>Community Board</h3><p>Share tips, ask neighbors, and post your completed projects on our digital pegboard.</p></div>
-      <div class="feature-card"><div class="feature-icon">💡</div><h3>Always Learning</h3><p>Our AI stays current with real-time web search so you always get the most up-to-date advice and product recommendations.</p></div>
     </div>
   </div>
 </section>
@@ -260,21 +267,80 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <h2 class="section-title">Ask Handy Helper Anything</h2>
       <p class="section-sub">Type your home repair question and get instant step-by-step guidance from our AI assistant.</p>
       <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
-        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <span>"How do I fix a running toilet?"</span></li>
-        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <span>"What causes a circuit breaker to trip?"</span></li>
-        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <span>"How do I patch drywall?"</span></li>
-        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <span>"How to install a ceiling fan?"</span></li>
+        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <a href="/fix-running-toilet" style="color:var(--text-muted); text-decoration:none;">"How do I fix a running toilet?"</a></li>
+        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <a href="/circuit-breaker-tripping" style="color:var(--text-muted); text-decoration:none;">"What causes a circuit breaker to trip?"</a></li>
+        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <a href="/patch-drywall" style="color:var(--text-muted); text-decoration:none;">"How do I patch drywall?"</a></li>
+        <li style="font-size:14px; color:var(--text-muted); display:flex; gap:8px;">→ <a href="/install-ceiling-fan" style="color:var(--text-muted); text-decoration:none;">"How to install a ceiling fan?"</a></li>
       </ul>
     </div>
     <div class="chatbot-frame">
-      <iframe
-        src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/?embedded=true"
-        width="100%" height="100%" frameborder="0" allow="microphone" style="border:none; border-radius:8px;">
-      </iframe>
+      <iframe src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/?embedded=true" width="100%" height="100%" frameborder="0" allow="microphone" style="border:none; border-radius:8px;"></iframe>
     </div>
   </div>
 </section>
 
+<!-- DIY GUIDES SECTION -->
+<section id="guides" class="guides-section">
+  <div class="section-inner">
+    <div class="section-tag">// FREE DIY GUIDES</div>
+    <h2 class="section-title">Step by Step Project Guides</h2>
+    <p class="section-sub">Detailed guides for the most common home repair projects. Each one is free, beginner friendly, and ends with a personalized walkthrough from Handy Helper.</p>
+    <div class="guides-grid">
+      <a href="/fix-running-toilet" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
+        <h4>How to Fix a Running Toilet</h4>
+        <p>15–30 min · $5–$20 · Beginner</p>
+      </a>
+      <a href="/fix-leaky-faucet" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
+        <h4>How to Fix a Leaky Faucet</h4>
+        <p>20–45 min · $10–$30 · Beginner</p>
+      </a>
+      <a href="/unclog-drain" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
+        <h4>How to Unclog a Drain</h4>
+        <p>15–30 min · $0–$20 · Beginner</p>
+      </a>
+      <a href="/circuit-breaker-tripping" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
+        <h4>Why Does My Circuit Breaker Keep Tripping?</h4>
+        <p>10–20 min · Often free · Beginner</p>
+      </a>
+      <a href="/install-ceiling-fan" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
+        <h4>How to Install a Ceiling Fan</h4>
+        <p>45–90 min · $50–$150 · Intermediate</p>
+      </a>
+      <a href="/replace-outlet" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
+        <h4>How to Replace an Electrical Outlet</h4>
+        <p>20–30 min · $5–$20 · Intermediate</p>
+      </a>
+      <a href="/patch-drywall" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">DRYWALL</span><span class="guide-arrow">→</span></div>
+        <h4>How to Patch a Hole in Drywall</h4>
+        <p>30–60 min · $10–$25 · Beginner</p>
+      </a>
+      <a href="/paint-room" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">PAINTING</span><span class="guide-arrow">→</span></div>
+        <h4>How to Paint a Room Like a Pro</h4>
+        <p>4–8 hours · $50–$150 · Beginner</p>
+      </a>
+      <a href="/fix-squeaky-floor" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">FLOORING</span><span class="guide-arrow">→</span></div>
+        <h4>How to Fix a Squeaky Floor</h4>
+        <p>30–60 min · $5–$15 · Beginner</p>
+      </a>
+      <a href="/caulk-bathroom" class="guide-card">
+        <div class="guide-card-top"><span class="guide-tag">TILE AND GROUT</span><span class="guide-arrow">→</span></div>
+        <h4>How to Recaulk a Bathtub or Shower</h4>
+        <p>1–2 hours · $10–$20 · Beginner</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY BOARD -->
 <section id="community" class="board-section">
   <div class="section-inner">
     <div class="section-tag">// COMMUNITY PEGBOARD</div>
@@ -282,34 +348,44 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <p class="section-sub">Just like the old hardware store pegboard — share tips, ask questions, and connect with fellow DIYers in your area.</p>
     <div class="board-grid">
       <div class="pin">
-        <div class="pin-top"><span class="pin-category">Plumbing</span><span class="pin-date">2 hrs ago</span></div>
-        <h4>Pro tip: Use Teflon tape on all threaded pipe fittings</h4>
-        <p>Wrap 3 times clockwise. Saved me from 3 leaks this year alone. Game changer for anyone doing their own plumbing!</p>
-        <div class="pin-footer"><span class="pin-author">Mike T. — Cincinnati</span><span class="pin-likes">♥ 24</span></div>
+        <a href="/tips/teflon-tape-pipe-fittings" class="pin-link">
+          <div class="pin-top"><span class="pin-category">Plumbing</span><span class="pin-date">2 hrs ago</span></div>
+          <h4>Pro tip: Use Teflon tape on all threaded pipe fittings</h4>
+          <p>Wrap 3 times clockwise. Saved me from 3 leaks this year alone. Game changer for anyone doing their own plumbing!</p>
+          <div class="pin-footer"><span class="pin-author">Mike T. — Cincinnati</span><span class="pin-read-more">Read more →</span></div>
+        </a>
       </div>
       <div class="pin">
-        <div class="pin-top"><span class="pin-category">Electrical</span><span class="pin-date">5 hrs ago</span></div>
-        <h4>GFCI outlets tripping? Check for moisture first</h4>
-        <p>Had mine tripping every week. Turned out the outlet box had moisture intrusion from outside. Sealed it and problem solved.</p>
-        <div class="pin-footer"><span class="pin-author">Sarah K. — Dayton</span><span class="pin-likes">♥ 18</span></div>
+        <a href="/tips/gfci-outlet-moisture" class="pin-link">
+          <div class="pin-top"><span class="pin-category">Electrical</span><span class="pin-date">5 hrs ago</span></div>
+          <h4>GFCI outlets tripping? Check for moisture first</h4>
+          <p>Had mine tripping every week. Turned out the outlet box had moisture intrusion from outside. Sealed it and problem solved.</p>
+          <div class="pin-footer"><span class="pin-author">Sarah K. — Dayton</span><span class="pin-read-more">Read more →</span></div>
+        </a>
       </div>
       <div class="pin">
-        <div class="pin-top"><span class="pin-category">Painting</span><span class="pin-date">1 day ago</span></div>
-        <h4>Always prime before painting dark over light</h4>
-        <p>Skipped primer once and needed 5 coats. With primer, 2 coats perfect. Never skipping again. Benjamin Moore primer is the best.</p>
-        <div class="pin-footer"><span class="pin-author">James R. — Columbus</span><span class="pin-likes">♥ 41</span></div>
+        <a href="/tips/prime-before-painting" class="pin-link">
+          <div class="pin-top"><span class="pin-category">Painting</span><span class="pin-date">1 day ago</span></div>
+          <h4>Always prime before painting dark over light</h4>
+          <p>Skipped primer once and needed 5 coats. With primer, 2 coats perfect. Never skipping again. Benjamin Moore primer is the best.</p>
+          <div class="pin-footer"><span class="pin-author">James R. — Columbus</span><span class="pin-read-more">Read more →</span></div>
+        </a>
       </div>
       <div class="pin">
-        <div class="pin-top"><span class="pin-category">HVAC</span><span class="pin-date">2 days ago</span></div>
-        <h4>Change your filter every 60 days — set a phone reminder</h4>
-        <p>My AC unit was running constantly. New filter dropped my electric bill by $40/month. Such a simple fix!</p>
-        <div class="pin-footer"><span class="pin-author">Lisa M. — Lexington</span><span class="pin-likes">♥ 55</span></div>
+        <a href="/tips/hvac-filter-60-days" class="pin-link">
+          <div class="pin-top"><span class="pin-category">HVAC</span><span class="pin-date">2 days ago</span></div>
+          <h4>Change your filter every 60 days — set a phone reminder</h4>
+          <p>My AC unit was running constantly. New filter dropped my electric bill by $40/month. Such a simple fix!</p>
+          <div class="pin-footer"><span class="pin-author">Lisa M. — Lexington</span><span class="pin-read-more">Read more →</span></div>
+        </a>
       </div>
       <div class="pin">
-        <div class="pin-top"><span class="pin-category">Flooring</span><span class="pin-date">3 days ago</span></div>
-        <h4>Leave laminate to acclimate 48hrs before installing</h4>
-        <p>Rushed it once — warped within a week. Waited the 48 hours on my kitchen and it's been perfect for 2 years.</p>
-        <div class="pin-footer"><span class="pin-author">Dave P. — Indianapolis</span><span class="pin-likes">♥ 33</span></div>
+        <a href="/tips/laminate-acclimate-48-hours" class="pin-link">
+          <div class="pin-top"><span class="pin-category">Flooring</span><span class="pin-date">3 days ago</span></div>
+          <h4>Leave laminate to acclimate 48hrs before installing</h4>
+          <p>Rushed it once — warped within a week. Waited the 48 hours on my kitchen and it's been perfect for 2 years.</p>
+          <div class="pin-footer"><span class="pin-author">Dave P. — Indianapolis</span><span class="pin-read-more">Read more →</span></div>
+        </a>
       </div>
       <div class="pin" style="border:1px dashed rgba(232,82,26,0.3); display:flex; align-items:center; justify-content:center; min-height:160px; cursor:pointer;" onclick="document.getElementById('postModal').classList.add('open')">
         <div style="text-align:center;">
@@ -357,10 +433,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           </div>
           <p style="font-size:10px; color:var(--text-muted); margin-top:4px;">Home Screen</p>
           <div class="phone-home-grid">
-            <div>
-              <div class="phone-app-icon">HH</div>
-              <div class="phone-app-label">Handy Helper</div>
-            </div>
+            <div><div class="phone-app-icon">HH</div><div class="phone-app-label">Handy Helper</div></div>
             <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
             <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
             <div><div class="phone-app-icon placeholder"></div><div class="phone-app-label"></div></div>
@@ -481,9 +554,9 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="footer-col">
         <h4>Product</h4>
         <a href="#chat">AI Assistant</a>
+        <a href="#guides">DIY Guides</a>
         <a href="#shortcut">Home Screen</a>
         <a href="#community">Community Board</a>
-        <a href="#features">Features</a>
       </div>
       <div class="footer-col">
         <h4>Business</h4>
@@ -520,11 +593,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="First name and last initial"></div>
       <div class="form-group">
         <label>CATEGORY</label>
-        <select>
-          <option>Plumbing</option><option>Electrical</option><option>Carpentry</option>
-          <option>Painting</option><option>Flooring</option><option>HVAC</option>
-          <option>Roofing</option><option>Other</option>
-        </select>
+        <select><option>Plumbing</option><option>Electrical</option><option>Carpentry</option><option>Painting</option><option>Flooring</option><option>HVAC</option><option>Roofing</option><option>Other</option></select>
       </div>
       <div class="form-group"><label>TIP TITLE</label><input type="text" placeholder="Short descriptive title"></div>
       <div class="form-group"><label>YOUR TIP</label><textarea placeholder="Share your DIY knowledge..."></textarea></div>
@@ -550,7 +619,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>Share button</strong> at the bottom of the screen (the box with an arrow pointing up)</p></div>
         <div class="install-step"><div class="install-step-num">3</div><p>Scroll down and tap <strong>"Add to Home Screen"</strong></p></div>
         <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> in the top right corner</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen!</p></div>
       </div>
     </div>
     <div class="install-content" id="content-android">
@@ -559,16 +628,16 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>three dots menu</strong> in the top right corner</p></div>
         <div class="install-step"><div class="install-step-num">3</div><p>Tap <strong>"Add to Home screen"</strong></p></div>
         <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> to confirm</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen!</p></div>
       </div>
     </div>
     <div class="install-content" id="content-desktop">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your computer and go to <strong>handyhelper.company</strong></p></div>
-        <div class="install-step"><div class="install-step-num">2</div><p>Look for the <strong>install icon</strong> (a monitor with a down arrow) in the address bar on the right side</p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>Look for the <strong>install icon</strong> in the address bar on the right side</p></div>
         <div class="install-step"><div class="install-step-num">3</div><p>Click it and select <strong>"Install"</strong></p></div>
-        <div class="install-step"><div class="install-step-num">4</div><p>Handy Helper opens like a desktop app and a shortcut appears on your desktop</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong> instead</p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>A shortcut appears on your desktop instantly</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong></p></div>
       </div>
     </div>
   </div>
@@ -591,6 +660,5 @@ function copyEmail() {
   });
 }
 </script>
-
 </body>
 </html>
