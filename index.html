@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H31N4WPC54"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H31N4WPC54');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Handy Helper - Free AI-Powered DIY Home Repair Assistant</title>
@@ -68,8 +76,6 @@ section { padding: 80px 2rem; }
 .chatbot-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
 .chatbot-frame { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 600px; }
 .chatbot-frame iframe { width: 100%; height: 100%; border: none; border-radius: 8px; }
-
-/* GUIDES SECTION */
 .guides-section { background: var(--dark); }
 .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
 .guide-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-decoration: none; color: var(--cream); transition: border-color 0.2s, transform 0.2s; display: block; }
@@ -79,8 +85,6 @@ section { padding: 80px 2rem; }
 .guide-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.4; }
 .guide-card p { font-size: 12px; color: var(--text-muted); }
 .guide-arrow { font-size: 16px; color: var(--orange); }
-
-/* COMMUNITY BOARD */
 .board-section { background: var(--dark-2); border-top: 1px solid var(--border); }
 .board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
 .pin { background: var(--dark); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s; }
@@ -93,10 +97,7 @@ section { padding: 80px 2rem; }
 .pin p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 .pin-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
 .pin-author { font-size: 12px; color: var(--text-muted); }
-.pin-likes { font-size: 12px; color: var(--text-muted); cursor: pointer; }
-.pin-likes:hover { color: var(--orange-light); }
 .pin-read-more { font-size: 11px; color: var(--orange-light); font-family: 'DM Mono', monospace; }
-
 .shortcut-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .shortcut-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .shortcut-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
@@ -181,6 +182,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .install-tab.active { background: var(--orange); border-color: var(--orange); color: white; }
 .install-content { display: none; }
 .install-content.active { display: block; }
+.coming-soon { font-family: 'DM Mono', monospace; font-size: 10px; background: rgba(232,82,26,0.15); color: var(--orange-light); padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-chatbot { height: 400px; }
@@ -219,7 +221,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <p>Your 24/7 AI-powered home repair assistant. Get expert guidance on any DIY project — from leaky faucets to full renovations — instantly.</p>
       <div class="hero-actions">
         <a href="#chat" class="btn-primary">Ask Handy Helper ↗</a>
-        <a href="#shortcut" class="btn-secondary">Add to Home Screen</a>
+        <a href="#shortcut" class="btn-secondary">Get the App</a>
       </div>
     </div>
     <div class="hero-chatbot">
@@ -240,7 +242,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div><div class="stat-num">37+</div><div class="stat-label">Project Categories</div></div>
     <div><div class="stat-num">24/7</div><div class="stat-label">AI Availability</div></div>
     <div><div class="stat-num">$0</div><div class="stat-label">To Get Started</div></div>
-    <div><div class="stat-num">FREE</div><div class="stat-label">No App Needed</div></div>
+    <div><div class="stat-num">FREE</div><div class="stat-label">Android App Available</div></div>
   </div>
 </div>
 
@@ -254,7 +256,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <div class="feature-card"><div class="feature-icon">🌐</div><h3>Web Search</h3><p>Real-time search means your answers are always current with the latest products, codes, and techniques.</p></div>
       <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Safety First</h3><p>Built-in safety tiers alert you to risks and recommend certified professionals for dangerous work.</p></div>
       <div class="feature-card"><div class="feature-icon">📸</div><h3>Photo Analysis</h3><p>Upload a photo of your problem and get advice tailored to exactly what Handy Helper sees in the image.</p></div>
-      <div class="feature-card"><div class="feature-icon">📱</div><h3>Home Screen Shortcut</h3><p>Add Handy Helper to your phone or desktop home screen for instant one-tap access — no app store needed.</p></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><h3>Android App</h3><p>Download the free Handy Helper Android app for a native mobile experience with bottom navigation and offline access.</p></div>
       <div class="feature-card"><div class="feature-icon">🏘️</div><h3>Community Board</h3><p>Share tips, ask neighbors, and post your completed projects on our digital pegboard.</p></div>
     </div>
   </div>
@@ -286,56 +288,16 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <h2 class="section-title">Step by Step Project Guides</h2>
     <p class="section-sub">Detailed guides for the most common home repair projects. Each one is free, beginner friendly, and ends with a personalized walkthrough from Handy Helper.</p>
     <div class="guides-grid">
-      <a href="/fix-running-toilet" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
-        <h4>How to Fix a Running Toilet</h4>
-        <p>15–30 min · $5–$20 · Beginner</p>
-      </a>
-      <a href="/fix-leaky-faucet" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
-        <h4>How to Fix a Leaky Faucet</h4>
-        <p>20–45 min · $10–$30 · Beginner</p>
-      </a>
-      <a href="/unclog-drain" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div>
-        <h4>How to Unclog a Drain</h4>
-        <p>15–30 min · $0–$20 · Beginner</p>
-      </a>
-      <a href="/circuit-breaker-tripping" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
-        <h4>Why Does My Circuit Breaker Keep Tripping?</h4>
-        <p>10–20 min · Often free · Beginner</p>
-      </a>
-      <a href="/install-ceiling-fan" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
-        <h4>How to Install a Ceiling Fan</h4>
-        <p>45–90 min · $50–$150 · Intermediate</p>
-      </a>
-      <a href="/replace-outlet" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div>
-        <h4>How to Replace an Electrical Outlet</h4>
-        <p>20–30 min · $5–$20 · Intermediate</p>
-      </a>
-      <a href="/patch-drywall" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">DRYWALL</span><span class="guide-arrow">→</span></div>
-        <h4>How to Patch a Hole in Drywall</h4>
-        <p>30–60 min · $10–$25 · Beginner</p>
-      </a>
-      <a href="/paint-room" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">PAINTING</span><span class="guide-arrow">→</span></div>
-        <h4>How to Paint a Room Like a Pro</h4>
-        <p>4–8 hours · $50–$150 · Beginner</p>
-      </a>
-      <a href="/fix-squeaky-floor" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">FLOORING</span><span class="guide-arrow">→</span></div>
-        <h4>How to Fix a Squeaky Floor</h4>
-        <p>30–60 min · $5–$15 · Beginner</p>
-      </a>
-      <a href="/caulk-bathroom" class="guide-card">
-        <div class="guide-card-top"><span class="guide-tag">TILE AND GROUT</span><span class="guide-arrow">→</span></div>
-        <h4>How to Recaulk a Bathtub or Shower</h4>
-        <p>1–2 hours · $10–$20 · Beginner</p>
-      </a>
+      <a href="/fix-running-toilet" class="guide-card"><div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div><h4>How to Fix a Running Toilet</h4><p>15–30 min · $5–$20 · Beginner</p></a>
+      <a href="/fix-leaky-faucet" class="guide-card"><div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div><h4>How to Fix a Leaky Faucet</h4><p>20–45 min · $10–$30 · Beginner</p></a>
+      <a href="/unclog-drain" class="guide-card"><div class="guide-card-top"><span class="guide-tag">PLUMBING</span><span class="guide-arrow">→</span></div><h4>How to Unclog a Drain</h4><p>15–30 min · $0–$20 · Beginner</p></a>
+      <a href="/circuit-breaker-tripping" class="guide-card"><div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div><h4>Why Does My Circuit Breaker Keep Tripping?</h4><p>10–20 min · Often free · Beginner</p></a>
+      <a href="/install-ceiling-fan" class="guide-card"><div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div><h4>How to Install a Ceiling Fan</h4><p>45–90 min · $50–$150 · Intermediate</p></a>
+      <a href="/replace-outlet" class="guide-card"><div class="guide-card-top"><span class="guide-tag">ELECTRICAL</span><span class="guide-arrow">→</span></div><h4>How to Replace an Electrical Outlet</h4><p>20–30 min · $5–$20 · Intermediate</p></a>
+      <a href="/patch-drywall" class="guide-card"><div class="guide-card-top"><span class="guide-tag">DRYWALL</span><span class="guide-arrow">→</span></div><h4>How to Patch a Hole in Drywall</h4><p>30–60 min · $10–$25 · Beginner</p></a>
+      <a href="/paint-room" class="guide-card"><div class="guide-card-top"><span class="guide-tag">PAINTING</span><span class="guide-arrow">→</span></div><h4>How to Paint a Room Like a Pro</h4><p>4–8 hours · $50–$150 · Beginner</p></a>
+      <a href="/fix-squeaky-floor" class="guide-card"><div class="guide-card-top"><span class="guide-tag">FLOORING</span><span class="guide-arrow">→</span></div><h4>How to Fix a Squeaky Floor</h4><p>30–60 min · $5–$15 · Beginner</p></a>
+      <a href="/caulk-bathroom" class="guide-card"><div class="guide-card-top"><span class="guide-tag">TILE AND GROUT</span><span class="guide-arrow">→</span></div><h4>How to Recaulk a Bathtub or Shower</h4><p>1–2 hours · $10–$20 · Beginner</p></a>
     </div>
   </div>
 </section>
@@ -347,81 +309,60 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <h2 class="section-title">The Neighborhood Board</h2>
     <p class="section-sub">Just like the old hardware store pegboard — share tips, ask questions, and connect with fellow DIYers in your area.</p>
     <div class="board-grid">
-      <div class="pin">
-        <a href="/tips/teflon-tape-pipe-fittings" class="pin-link">
-          <div class="pin-top"><span class="pin-category">Plumbing</span><span class="pin-date">2 hrs ago</span></div>
-          <h4>Pro tip: Use Teflon tape on all threaded pipe fittings</h4>
-          <p>Wrap 3 times clockwise. Saved me from 3 leaks this year alone. Game changer for anyone doing their own plumbing!</p>
-          <div class="pin-footer"><span class="pin-author">Mike T. — Cincinnati</span><span class="pin-read-more">Read more →</span></div>
-        </a>
-      </div>
-      <div class="pin">
-        <a href="/tips/gfci-outlet-moisture" class="pin-link">
-          <div class="pin-top"><span class="pin-category">Electrical</span><span class="pin-date">5 hrs ago</span></div>
-          <h4>GFCI outlets tripping? Check for moisture first</h4>
-          <p>Had mine tripping every week. Turned out the outlet box had moisture intrusion from outside. Sealed it and problem solved.</p>
-          <div class="pin-footer"><span class="pin-author">Sarah K. — Dayton</span><span class="pin-read-more">Read more →</span></div>
-        </a>
-      </div>
-      <div class="pin">
-        <a href="/tips/prime-before-painting" class="pin-link">
-          <div class="pin-top"><span class="pin-category">Painting</span><span class="pin-date">1 day ago</span></div>
-          <h4>Always prime before painting dark over light</h4>
-          <p>Skipped primer once and needed 5 coats. With primer, 2 coats perfect. Never skipping again. Benjamin Moore primer is the best.</p>
-          <div class="pin-footer"><span class="pin-author">James R. — Columbus</span><span class="pin-read-more">Read more →</span></div>
-        </a>
-      </div>
-      <div class="pin">
-        <a href="/tips/hvac-filter-60-days" class="pin-link">
-          <div class="pin-top"><span class="pin-category">HVAC</span><span class="pin-date">2 days ago</span></div>
-          <h4>Change your filter every 60 days — set a phone reminder</h4>
-          <p>My AC unit was running constantly. New filter dropped my electric bill by $40/month. Such a simple fix!</p>
-          <div class="pin-footer"><span class="pin-author">Lisa M. — Lexington</span><span class="pin-read-more">Read more →</span></div>
-        </a>
-      </div>
-      <div class="pin">
-        <a href="/tips/laminate-acclimate-48-hours" class="pin-link">
-          <div class="pin-top"><span class="pin-category">Flooring</span><span class="pin-date">3 days ago</span></div>
-          <h4>Leave laminate to acclimate 48hrs before installing</h4>
-          <p>Rushed it once — warped within a week. Waited the 48 hours on my kitchen and it's been perfect for 2 years.</p>
-          <div class="pin-footer"><span class="pin-author">Dave P. — Indianapolis</span><span class="pin-read-more">Read more →</span></div>
-        </a>
-      </div>
+      <div class="pin"><a href="/tips/teflon-tape-pipe-fittings" class="pin-link"><div class="pin-top"><span class="pin-category">Plumbing</span><span class="pin-date">2 hrs ago</span></div><h4>Pro tip: Use Teflon tape on all threaded pipe fittings</h4><p>Wrap 3 times clockwise. Saved me from 3 leaks this year alone. Game changer for anyone doing their own plumbing!</p><div class="pin-footer"><span class="pin-author">Mike T. — Cincinnati</span><span class="pin-read-more">Read more →</span></div></a></div>
+      <div class="pin"><a href="/tips/gfci-outlet-moisture" class="pin-link"><div class="pin-top"><span class="pin-category">Electrical</span><span class="pin-date">5 hrs ago</span></div><h4>GFCI outlets tripping? Check for moisture first</h4><p>Had mine tripping every week. Turned out the outlet box had moisture intrusion from outside. Sealed it and problem solved.</p><div class="pin-footer"><span class="pin-author">Sarah K. — Dayton</span><span class="pin-read-more">Read more →</span></div></a></div>
+      <div class="pin"><a href="/tips/prime-before-painting" class="pin-link"><div class="pin-top"><span class="pin-category">Painting</span><span class="pin-date">1 day ago</span></div><h4>Always prime before painting dark over light</h4><p>Skipped primer once and needed 5 coats. With primer, 2 coats perfect. Never skipping again. Benjamin Moore primer is the best.</p><div class="pin-footer"><span class="pin-author">James R. — Columbus</span><span class="pin-read-more">Read more →</span></div></a></div>
+      <div class="pin"><a href="/tips/hvac-filter-60-days" class="pin-link"><div class="pin-top"><span class="pin-category">HVAC</span><span class="pin-date">2 days ago</span></div><h4>Change your filter every 60 days — set a phone reminder</h4><p>My AC unit was running constantly. New filter dropped my electric bill by $40/month. Such a simple fix!</p><div class="pin-footer"><span class="pin-author">Lisa M. — Lexington</span><span class="pin-read-more">Read more →</span></div></a></div>
+      <div class="pin"><a href="/tips/laminate-acclimate-48-hours" class="pin-link"><div class="pin-top"><span class="pin-category">Flooring</span><span class="pin-date">3 days ago</span></div><h4>Leave laminate to acclimate 48hrs before installing</h4><p>Rushed it once — warped within a week. Waited the 48 hours on my kitchen and it's been perfect for 2 years.</p><div class="pin-footer"><span class="pin-author">Dave P. — Indianapolis</span><span class="pin-read-more">Read more →</span></div></a></div>
       <div class="pin" style="border:1px dashed rgba(232,82,26,0.3); display:flex; align-items:center; justify-content:center; min-height:160px; cursor:pointer;" onclick="document.getElementById('postModal').classList.add('open')">
-        <div style="text-align:center;">
-          <div style="font-size:32px; margin-bottom:0.5rem;">📌</div>
-          <div style="font-size:14px; color:var(--orange-light); font-weight:500;">Post a Tip</div>
-          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">Share with the community</div>
-        </div>
+        <div style="text-align:center;"><div style="font-size:32px; margin-bottom:0.5rem;">📌</div><div style="font-size:14px; color:var(--orange-light); font-weight:500;">Post a Tip</div><div style="font-size:12px; color:var(--text-muted); margin-top:4px;">Share with the community</div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- GET THE APP SECTION -->
 <section id="shortcut" class="shortcut-section">
   <div class="section-inner shortcut-inner">
     <div>
-      <div class="section-tag">// QUICK ACCESS</div>
-      <h2 class="section-title">Add to Your Home Screen</h2>
-      <p class="section-sub">Get instant one-tap access to Handy Helper right from your phone home screen or computer desktop — no app store required.</p>
+      <div class="section-tag">// GET THE APP</div>
+      <h2 class="section-title">Handy Helper On Every Device</h2>
+      <p class="section-sub">Download the free Android app or add Handy Helper to your home screen on any device for instant one-tap access — no app store required for iOS and desktop.</p>
       <div class="shortcut-cards">
+
+        <!-- ANDROID APK DOWNLOAD -->
+        <a class="shortcut-btn" href="/HandyHelper.apk" download="HandyHelper.apk">
+          <div class="shortcut-icon">🤖</div>
+          <div class="shortcut-text">
+            <small>Free Android App — Direct Download</small>
+            <strong>Download for Android ↓</strong>
+          </div>
+          <span style="font-size:20px; color:var(--orange);">↓</span>
+        </a>
+
+        <!-- IOS HOME SCREEN -->
         <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('ios')">
           <div class="shortcut-icon">🍎</div>
           <div class="shortcut-text"><small>iPhone &amp; iPad</small><strong>Add to Home Screen</strong></div>
           <span style="font-size:18px; color:var(--orange);">→</span>
         </button>
-        <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('android')">
-          <div class="shortcut-icon">🤖</div>
-          <div class="shortcut-text"><small>Android Phone &amp; Tablet</small><strong>Add to Home Screen</strong></div>
-          <span style="font-size:18px; color:var(--orange);">→</span>
-        </button>
+
+        <!-- DESKTOP -->
         <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('desktop')">
           <div class="shortcut-icon">🖥️</div>
           <div class="shortcut-text"><small>Windows, Mac &amp; Chromebook</small><strong>Add to Desktop</strong></div>
           <span style="font-size:18px; color:var(--orange);">→</span>
         </button>
+
+        <!-- IOS APP STORE COMING SOON -->
+        <button class="shortcut-btn" onclick="alert('iOS App Store version coming soon! Use Add to Home Screen above for instant access on iPhone.')">
+          <div class="shortcut-icon">🍎</div>
+          <div class="shortcut-text"><small>Coming Soon</small><strong>App Store</strong></div>
+          <span class="coming-soon">SOON</span>
+        </button>
+
       </div>
-      <p style="font-size:12px; color:var(--text-muted); margin-top:1rem;">Works on all devices and browsers. No download required.</p>
+      <p style="font-size:12px; color:var(--text-muted); margin-top:1rem;">Android APK installs directly — no Google Play account needed.</p>
     </div>
     <div class="shortcut-visual">
       <div class="phone-frame">
@@ -506,7 +447,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <select>
             <option>General Inquiry</option>
             <option>Advertising Inquiry</option>
-            <option>Home Screen Setup Help</option>
+            <option>App Install Help</option>
             <option>Partnership Opportunity</option>
             <option>Technical Support</option>
           </select>
@@ -555,7 +496,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <h4>Product</h4>
         <a href="#chat">AI Assistant</a>
         <a href="#guides">DIY Guides</a>
-        <a href="#shortcut">Home Screen</a>
+        <a href="#shortcut">Get the App</a>
         <a href="#community">Community Board</a>
       </div>
       <div class="footer-col">
@@ -591,10 +532,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <p>Share your DIY knowledge with the community</p>
     <div class="contact-form">
       <div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="First name and last initial"></div>
-      <div class="form-group">
-        <label>CATEGORY</label>
-        <select><option>Plumbing</option><option>Electrical</option><option>Carpentry</option><option>Painting</option><option>Flooring</option><option>HVAC</option><option>Roofing</option><option>Other</option></select>
-      </div>
+      <div class="form-group"><label>CATEGORY</label><select><option>Plumbing</option><option>Electrical</option><option>Carpentry</option><option>Painting</option><option>Flooring</option><option>HVAC</option><option>Roofing</option><option>Other</option></select></div>
       <div class="form-group"><label>TIP TITLE</label><input type="text" placeholder="Short descriptive title"></div>
       <div class="form-group"><label>YOUR TIP</label><textarea placeholder="Share your DIY knowledge..."></textarea></div>
       <button class="btn-primary" onclick="alert('Tip submitted! It will appear on the board after review.'); document.getElementById('postModal').classList.remove('open')">Post Tip →</button>
@@ -606,38 +544,44 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 <div class="modal-overlay" id="installModal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal">
     <button class="modal-close" onclick="document.getElementById('installModal').classList.remove('open')">✕</button>
-    <h3>Add to Home Screen</h3>
-    <p>Follow these steps for your device to get instant access to Handy Helper</p>
+    <h3>Install Handy Helper</h3>
+    <p>Choose your device for step by step instructions</p>
     <div class="install-tabs">
       <button class="install-tab active" id="tab-ios" onclick="showTab('ios')">🍎 iPhone</button>
       <button class="install-tab" id="tab-android" onclick="showTab('android')">🤖 Android</button>
       <button class="install-tab" id="tab-desktop" onclick="showTab('desktop')">🖥️ Desktop</button>
     </div>
+
     <div class="install-content active" id="content-ios">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Safari</strong> on your iPhone or iPad and go to <strong>handyhelper.company</strong></p></div>
         <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>Share button</strong> at the bottom of the screen (the box with an arrow pointing up)</p></div>
         <div class="install-step"><div class="install-step-num">3</div><p>Scroll down and tap <strong>"Add to Home Screen"</strong></p></div>
         <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> in the top right corner</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen!</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen — tap it anytime for instant access!</p></div>
       </div>
     </div>
+
     <div class="install-content" id="content-android">
       <div class="install-steps">
-        <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your Android device and go to <strong>handyhelper.company</strong></p></div>
-        <div class="install-step"><div class="install-step-num">2</div><p>Tap the <strong>three dots menu</strong> in the top right corner</p></div>
-        <div class="install-step"><div class="install-step-num">3</div><p>Tap <strong>"Add to Home screen"</strong></p></div>
-        <div class="install-step"><div class="install-step-num">4</div><p>Tap <strong>"Add"</strong> to confirm</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p>The Handy Helper icon now appears on your home screen!</p></div>
+        <div class="install-step"><div class="install-step-num">1</div><p>Tap the <strong>Download for Android</strong> button on this page to download the APK file</p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>When prompted tap <strong>"Download anyway"</strong> — the file is safe and verified</p></div>
+        <div class="install-step"><div class="install-step-num">3</div><p>Open your <strong>Downloads folder</strong> and tap <strong>HandyHelper.apk</strong></p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>If prompted go to <strong>Settings → Security</strong> and enable <strong>"Install unknown apps"</strong> for your browser</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p>Tap <strong>Install</strong> and Handy Helper will appear on your home screen with full app navigation!</p></div>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="/HandyHelper.apk" download="HandyHelper.apk" class="btn-primary" style="width:100%; justify-content:center;">↓ Download APK Now</a>
       </div>
     </div>
+
     <div class="install-content" id="content-desktop">
       <div class="install-steps">
         <div class="install-step"><div class="install-step-num">1</div><p>Open <strong>Chrome</strong> on your computer and go to <strong>handyhelper.company</strong></p></div>
-        <div class="install-step"><div class="install-step-num">2</div><p>Look for the <strong>install icon</strong> in the address bar on the right side</p></div>
+        <div class="install-step"><div class="install-step-num">2</div><p>Look for the <strong>install icon</strong> (a monitor with a down arrow) in the address bar on the right side</p></div>
         <div class="install-step"><div class="install-step-num">3</div><p>Click it and select <strong>"Install"</strong></p></div>
-        <div class="install-step"><div class="install-step-num">4</div><p>A shortcut appears on your desktop instantly</p></div>
-        <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong></p></div>
+        <div class="install-step"><div class="install-step-num">4</div><p>Handy Helper opens like a desktop app and a shortcut appears on your desktop</p></div>
+        <div class="install-step"><div class="install-step-num">5</div><p><strong>On Mac with Safari:</strong> Go to File menu → <strong>"Add to Dock"</strong> instead</p></div>
       </div>
     </div>
   </div>
