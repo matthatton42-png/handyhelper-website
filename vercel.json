@@ -19,6 +19,8 @@
     { "source": "/tips/gfci-outlet-moisture", "destination": "/tips-gfci-outlet-moisture.html" },
     { "source": "/tips/prime-before-painting", "destination": "/tips-prime-before-painting.html" },
     { "source": "/tips/hvac-filter-60-days", "destination": "/tips-hvac-filter-60-days.html" },
-    { "source": "/tips/laminate-acclimate-48-hours", "destination": "/tips-laminate-acclimate-48-hours.html" }
+    { "source": "/tips/laminate-acclimate-48-hours", "destination": "/tips-laminate-acclimate-48-hours.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
   ]
 }
