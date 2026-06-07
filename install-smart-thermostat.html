@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H31N4WPC54"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H31N4WPC54');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Install a Smart Thermostat | Handy Helper DIY Guide</title>
+<meta name="description" content="Install a smart thermostat yourself and start saving on energy bills. Step-by-step wiring guide for Nest, Ecobee, and Honeywell smart thermostats. Free DIY guide.">
+<meta name="keywords" content="install smart thermostat, Nest thermostat installation, Ecobee installation, smart thermostat wiring, replace thermostat DIY">
+<meta property="og:title" content="How to Install a Smart Thermostat | Handy Helper">
+<meta property="og:description" content="Install a smart thermostat yourself and start saving on energy bills. Step-by-step wiring guide for Nest, Ecobee, and Honeywell smart thermostats. Free DIY guide.">
+<meta property="og:url" content="https://handyhelper.company/install-smart-thermostat">
+<link rel="canonical" href="https://handyhelper.company/install-smart-thermostat">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --orange:#E8521A; --orange-dark:#C43E0A; --orange-light:#FF7A45; --cream:#F5F0E8; --dark:#1A1612; --dark-2:#2C2520; --dark-3:#3D3530; --text-muted:#8A7E76; --success:#2D7D46; --border:rgba(232,82,26,0.15); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--dark); color:var(--cream); line-height:1.7; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(26,22,18,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 2rem; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--orange); letter-spacing:2px; text-decoration:none; }
+.nav-logo span { color:var(--cream); }
+.nav-back { color:var(--text-muted); text-decoration:none; font-size:14px; transition:color 0.2s; }
+.nav-back:hover { color:var(--cream); }
+.container { max-width:800px; margin:0 auto; padding:100px 2rem 60px; }
+.breadcrumb { font-size:12px; color:var(--text-muted); margin-bottom:1.5rem; font-family:'DM Mono',monospace; }
+.breadcrumb a { color:var(--orange-light); text-decoration:none; }
+.category-tag { display:inline-block; background:rgba(232,82,26,0.15); border:1px solid rgba(232,82,26,0.3); color:var(--orange-light); font-size:11px; font-family:'DM Mono',monospace; letter-spacing:2px; padding:4px 12px; border-radius:100px; margin-bottom:1rem; }
+h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,6vw,64px); letter-spacing:1px; line-height:1; margin-bottom:1rem; }
+h1 span { color:var(--orange); }
+.intro { font-size:18px; color:var(--text-muted); margin-bottom:2rem; max-width:640px; }
+.meta { display:flex; gap:1.5rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+.meta-item { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text-muted); font-family:'DM Mono',monospace; }
+.meta-item span { color:var(--orange-light); }
+h2 { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:1px; margin:2rem 0 1rem; color:var(--cream); }
+.step { background:var(--dark-2); border:1px solid var(--border); border-radius:8px; padding:1.5rem; margin-bottom:1rem; display:flex; gap:1rem; }
+.step-num { width:36px; height:36px; min-width:36px; background:var(--orange); border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:18px; color:white; }
+.step-content h3 { font-size:16px; font-weight:500; margin-bottom:0.5rem; }
+.step-content p { font-size:14px; color:var(--text-muted); line-height:1.6; }
+.tip-box { background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25); border-radius:8px; padding:1.25rem; margin:1.5rem 0; }
+.tip-box strong { color:var(--orange-light); font-size:13px; font-family:'DM Mono',monospace; letter-spacing:1px; display:block; margin-bottom:0.5rem; }
+.tip-box p { font-size:14px; color:var(--text-muted); }
+.warning-box { background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.4); border-radius:8px; padding:1.25rem; margin:1.5rem 0; }
+.warning-box strong { color:var(--orange-light); font-size:13px; font-family:'DM Mono',monospace; letter-spacing:1px; display:block; margin-bottom:0.5rem; }
+.warning-box p { font-size:14px; color:var(--text-muted); }
+.cta-box { background:linear-gradient(135deg,var(--dark-2),var(--dark-3)); border:1px solid var(--orange); border-radius:12px; padding:2rem; margin:3rem 0; text-align:center; }
+.cta-box h2 { font-size:32px; margin:0 0 0.75rem; }
+.cta-box p { color:var(--text-muted); margin-bottom:1.5rem; font-size:15px; }
+.btn-primary { background:var(--orange); color:white; padding:14px 28px; border-radius:4px; text-decoration:none; font-weight:500; font-size:15px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
+.btn-primary:hover { background:var(--orange-dark); transform:translateY(-1px); }
+.related { margin-top:3rem; }
+.related h2 { margin-bottom:1rem; }
+.related-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.related-card { background:var(--dark-2); border:1px solid var(--border); border-radius:8px; padding:1.25rem; text-decoration:none; color:var(--cream); transition:border-color 0.2s; }
+.related-card:hover { border-color:rgba(232,82,26,0.4); }
+.related-card .tag { font-size:10px; font-family:'DM Mono',monospace; color:var(--orange-light); letter-spacing:1px; margin-bottom:0.5rem; display:block; }
+.related-card h4 { font-size:14px; font-weight:500; }
+footer { background:var(--dark-2); border-top:1px solid var(--border); padding:2rem; text-align:center; margin-top:4rem; }
+footer p { font-size:12px; color:var(--text-muted); }
+footer a { color:var(--orange-light); text-decoration:none; }
+@media (max-width:600px) { .related-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Handy<span>Helper</span></a>
+  <a href="/" class="nav-back">&#8592; Back to Home</a>
+</nav>
+<div class="container">
+  <div class="breadcrumb"><a href="/">Home</a> &#8594; <a href="/#guides">DIY Guides</a> &#8594; How to Install a Smart Thermostat</div>
+  <div class="category-tag">SMART HOME</div>
+  <h1>How to Install a Smart Thermostat</h1>
+  <p class="intro">Installing a smart thermostat is one of the best return-on-investment home upgrades you can make — most homeowners save $150 or more per year on energy bills. The installation takes about 30 minutes and requires no special tools.</p>
+  <div class="meta">
+    <div class="meta-item"><span>&#9201;</span> 30–60 minutes</div>
+    <div class="meta-item"><span>&#128176;</span> $100–$250 for the thermostat</div>
+    <div class="meta-item"><span>&#128296;</span> Beginner friendly</div>
+  </div>
+  <h2>Step by Step Instructions</h2>
+  
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h3>Turn Off the Power and Check Compatibility</h3>
+      <p>Go to your electrical panel and turn off the breaker for your HVAC system. Most smart thermostats require a C-wire (common wire) for continuous power. Remove your current thermostat cover and look at the wiring. If you see a wire connected to the terminal labeled C you are good to go. If not your smart thermostat may include an adapter or you may need to run a new wire. Check the compatibility tool on your thermostat manufacturer's website before purchasing.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h3>Label and Remove Old Wiring</h3>
+      <p>Use the included labels or small pieces of tape to label each wire with its terminal letter before disconnecting anything. Take a photo as well. Common terminals are R (power), G (fan), Y (cooling), W (heat), and C (common). Loosen each screw terminal and remove the wires. Remove the old thermostat base from the wall.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h3>Mount the New Base</h3>
+      <p>Thread your labeled wires through the center opening of the new thermostat base. Hold the base level against the wall and mark the mounting hole locations with a pencil. If your new thermostat is larger than the old one it will cover any paint marks left behind. Drill pilot holes and mount the base with the included screws and wall anchors.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h3>Connect the Wiring</h3>
+      <p>Connect each labeled wire to the matching terminal on your new thermostat base. The labels you applied in step 2 make this straightforward — match each letter to its terminal. Tighten each screw firmly but do not overtighten. Tuck any excess wire back into the wall opening. Snap the thermostat display unit onto the base.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h3>Restore Power and Configure</h3>
+      <p>Turn the HVAC breaker back on. Follow the setup wizard on your new thermostat screen to configure your heating and cooling system type, connect to your WiFi network, and set your schedule preferences. Download the companion app on your phone for remote control. Run a test of both heating and cooling to confirm everything is working correctly.</p>
+    </div>
+  </div>
+  <div class="tip-box">
+    <strong>💡 PRO TIP</strong>
+    <p>Take a photo of your old thermostat wiring before disconnecting anything — even if you label every wire. Having a photo as backup reference has saved countless homeowners from a completely preventable reinstall problem. It takes 5 seconds and is worth it every time.</p>
+  </div>
+  <div class="warning-box">
+    <strong>⚠️ WHEN TO CALL A PROFESSIONAL</strong>
+    <p>If your system uses high voltage wiring — 110V or 240V — rather than the standard low voltage thermostat wiring do not attempt this yourself. High voltage thermostats are found in electric baseboard heating systems and require a licensed electrician. If you are unsure check your current thermostat — low voltage systems have thin wire about the diameter of a pencil lead.</p>
+  </div>
+  <div class="cta-box">
+    <h2>Want a Personalized Walkthrough?</h2>
+    <p>Every project is different. Upload a photo of your specific problem and ask Handy Helper — our AI will analyze your situation and guide you through it step by step for free.</p>
+    <a href="/#chat" class="btn-primary">Ask Handy Helper &#8212; It&#8217;s Free &#8599;</a>
+  </div>
+  <div class="related">
+    <h2>More DIY Guides</h2>
+    <div class="related-grid">
+      <a href="/hvac-not-cooling" class="related-card"><span class="tag">HVAC</span><h4>Why Is My HVAC Not Cooling?</h4></a>
+<a href="/replace-light-switch" class="related-card"><span class="tag">ELECTRICAL</span><h4>How to Replace a Light Switch</h4></a>
+<a href="/circuit-breaker-tripping" class="related-card"><span class="tag">ELECTRICAL</span><h4>Why Does My Circuit Breaker Keep Tripping?</h4></a>
+<a href="/replace-outlet" class="related-card"><span class="tag">ELECTRICAL</span><h4>How to Replace an Electrical Outlet</h4></a>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <p>&#169; 2026 Handy Helper Company LLC &#8212; <a href="/">handyhelper.company</a> &#8212; AI-powered DIY assistance available nationwide</p>
+</footer>
+</body>
+</html>
