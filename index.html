@@ -19,6 +19,21 @@
 <meta property="og:url" content="https://handyhelper.company">
 <link rel="canonical" href="https://handyhelper.company">
 <link rel="manifest" href="manifest.json">
+<!-- iOS PWA support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Handy Helper">
+<meta name="theme-color" content="#E8521A">
+<link rel="apple-touch-icon" href="/ic_launcher-playstore.png">
+<link rel="apple-touch-startup-image" href="/ic_launcher-playstore.png">
+<!-- Register service worker for offline support -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
