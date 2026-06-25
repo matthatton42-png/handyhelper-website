@@ -2,7 +2,7 @@
   "name": "Handy Helper",
   "short_name": "Handy Helper",
   "description": "Free AI-powered DIY home repair assistant. 50+ categories, photo analysis, available 24/7.",
-  "start_url": "/",
+  "start_url": "/chat.html",
   "display": "standalone",
   "background_color": "#1A1612",
   "theme_color": "#E8521A",
