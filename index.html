@@ -26,12 +26,10 @@
 <meta name="theme-color" content="#E8521A">
 <link rel="apple-touch-icon" href="/ic_launcher-playstore.png">
 <link rel="apple-touch-startup-image" href="/ic_launcher-playstore.png">
-<!-- Register service worker for offline support -->
+<!-- iOS PWA: redirect to full-screen chatbot when launched from home screen -->
 <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js');
-    });
+  if (window.navigator.standalone === true) {
+    window.location.replace('/chat.html');
   }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -437,11 +435,14 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         </a>
 
         <!-- IOS HOME SCREEN -->
-        <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('ios')">
+        <a class="shortcut-btn" href="/chat.html">
           <div class="shortcut-icon">🍎</div>
-          <div class="shortcut-text"><small>iPhone &amp; iPad</small><strong>Add to Home Screen</strong></div>
+          <div class="shortcut-text">
+            <small>iPhone &amp; iPad — Tap, then Share → Add to Home Screen</small>
+            <strong>Add Chatbot to Home Screen →</strong>
+          </div>
           <span style="font-size:18px; color:var(--orange);">→</span>
-        </button>
+        </a>
 
         <!-- DESKTOP -->
         <button class="shortcut-btn" onclick="document.getElementById('installModal').classList.add('open'); showTab('desktop')">
