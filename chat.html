@@ -93,6 +93,15 @@
       var frame = document.getElementById('chatbot-frame');
       frame.src = frame.src + '&section=auth';
     }
+
+    // Listen for navigation requests from the embedded Streamlit app
+    // (cross-origin postMessage is the only way to navigate the top window
+    // from within a cross-origin iframe)
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.action === 'goHome') {
+        window.location.href = e.data.url || 'https://handyhelper.company';
+      }
+    });
   </script>
 
 </body>
