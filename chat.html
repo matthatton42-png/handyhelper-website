@@ -126,8 +126,17 @@
       frame.src = frame.src + '&section=auth';
     }
 
-    // Listen for postMessage from embedded Streamlit app
+    // Listen for messages from the embedded Streamlit app
     window.addEventListener('message', function(e) {
+      // Auth state — store user email so index.html can update the nav
+      if (e.data && e.data.action === 'hhUserInfo') {
+        if (e.data.email) {
+          localStorage.setItem('hh_user_email', e.data.email);
+        } else {
+          localStorage.removeItem('hh_user_email');
+        }
+      }
+      // Navigation back to website
       if (e.data && e.data.action === 'goHome') {
         window.location.href = e.data.url || 'https://handyhelper.company';
       }
