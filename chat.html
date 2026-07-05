@@ -12,59 +12,78 @@
   <title>Handy Helper</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
+    html, body { width: 100%; height: 100%; background: #1A1612; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow: hidden; }
+
+    /* Top navigation bar — visible in browser, hidden when installed as PWA */
+    #topbar {
+      display: none;
+      height: 48px;
+      background: #1A1612;
+      border-bottom: 1px solid rgba(232,82,26,0.25);
+      align-items: center;
+      padding: 0 1rem;
+      gap: 1rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 10;
+    }
+    #back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #2C2520;
+      border: 1px solid rgba(232,82,26,0.3);
+      border-radius: 8px;
+      padding: 6px 14px;
+      color: #F5F0E8;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    #back-btn:hover { background: #3D3530; border-color: rgba(232,82,26,0.6); }
+    #back-btn .arrow { color: #E8521A; font-size: 16px; }
+    .topbar-brand { flex: 1; text-align: center; font-size: 14px; font-weight: 700; color: #F5F0E8; }
+    .topbar-brand span { color: #E8521A; }
+
+    /* Iframe fills remaining space below topbar */
+    #chatbot-frame {
+      display: block;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      height: calc(100% - 48px);
+      border: none;
       background: #1A1612;
     }
-    /* Banner shown in Safari browser only (not when already installed as PWA) */
+    /* When topbar is hidden (PWA), iframe fills full height */
+    #chatbot-frame.fullscreen { height: 100%; }
+
+    /* iOS install banner */
     #install-banner {
       display: none;
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       background: #2C2520;
       border-top: 2px solid #E8521A;
       padding: 12px 16px 20px;
       text-align: center;
       z-index: 9999;
-      font-family: sans-serif;
     }
-    #install-banner p {
-      font-size: 13px;
-      color: #F5F0E8;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
+    #install-banner p { font-size: 13px; color: #F5F0E8; line-height: 1.5; margin-bottom: 8px; }
     #install-banner span { color: #E8521A; font-weight: 600; }
-    #install-banner button {
-      background: transparent;
-      border: none;
-      color: #8A7E76;
-      font-size: 12px;
-      padding: 4px 8px;
-      cursor: pointer;
-    }
-    iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      background: #1A1612;
-    }
+    #install-banner button { background: transparent; border: none; color: #8A7E76; font-size: 12px; padding: 4px 8px; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <!-- Only visible in Safari browser, hidden once installed as PWA -->
-  <div id="install-banner">
-    <p>📲 Tap <span>Share ↑</span> then <span>"Add to Home Screen"</span> to install Handy Helper as a free app on your iPhone.</p>
-    <button onclick="document.getElementById('install-banner').style.display='none'">Dismiss</button>
+  <!-- Top bar — visible in browser, navigates back to the website -->
+  <div id="topbar">
+    <a href="https://handyhelper.company" id="back-btn">
+      <span class="arrow">←</span>
+      <span>Return to handyhelper.company</span>
+    </a>
+    <div class="topbar-brand">Handy<span>Helper</span></div>
+    <div style="width:170px;"></div>
   </div>
 
   <iframe
@@ -75,28 +94,39 @@
     loading="eager"
   ></iframe>
 
+  <!-- iOS install banner -->
+  <div id="install-banner">
+    <p>📲 Tap <span>Share ↑</span> then <span>"Add to Home Screen"</span> to install Handy Helper as a free app.</p>
+    <button onclick="document.getElementById('install-banner').style.display='none'">Dismiss</button>
+  </div>
+
   <script>
     var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     var isStandalone = window.navigator.standalone === true;
+    var topbar = document.getElementById('topbar');
+    var frame = document.getElementById('chatbot-frame');
+
+    if (isStandalone) {
+      // Installed as PWA — hide topbar, iframe goes full screen
+      frame.classList.add('fullscreen');
+    } else {
+      // Regular browser — show topbar with back link
+      topbar.style.display = 'flex';
+    }
 
     // iOS install banner
     if (isIOS && !isStandalone) {
       document.getElementById('install-banner').style.display = 'block';
-      document.getElementById('chatbot-frame').style.height = 'calc(100% - 100px)';
+      frame.style.height = 'calc(100% - 48px - 90px)';
     }
 
-    // If the website nav Sign In button sent ?auth=1,
-    // forward it into the Streamlit URL so the app opens directly
-    // on the Sign In screen instead of the home screen
+    // If nav Sign In button sent ?auth=1, open directly on sign-in screen
     var params = new URLSearchParams(window.location.search);
     if (params.get('auth') === '1') {
-      var frame = document.getElementById('chatbot-frame');
       frame.src = frame.src + '&section=auth';
     }
 
-    // Listen for navigation requests from the embedded Streamlit app
-    // (cross-origin postMessage is the only way to navigate the top window
-    // from within a cross-origin iframe)
+    // Listen for postMessage from embedded Streamlit app
     window.addEventListener('message', function(e) {
       if (e.data && e.data.action === 'goHome') {
         window.location.href = e.data.url || 'https://handyhelper.company';
