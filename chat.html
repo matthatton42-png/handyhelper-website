@@ -68,6 +68,7 @@
   </div>
 
   <iframe
+    id="chatbot-frame"
     src="https://alex-diy-chatbot-z679bpxd5bhtwg8fpncf2u.streamlit.app/?embedded=true"
     allow="camera; microphone"
     allowfullscreen
@@ -75,13 +76,22 @@
   ></iframe>
 
   <script>
-    // Show the install banner ONLY in Safari on iOS (not when already installed as PWA)
     var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     var isStandalone = window.navigator.standalone === true;
+
+    // iOS install banner
     if (isIOS && !isStandalone) {
       document.getElementById('install-banner').style.display = 'block';
-      // Make room for the banner by shrinking the iframe
-      document.querySelector('iframe').style.height = 'calc(100% - 100px)';
+      document.getElementById('chatbot-frame').style.height = 'calc(100% - 100px)';
+    }
+
+    // If the website nav Sign In button sent ?auth=1,
+    // forward it into the Streamlit URL so the app opens directly
+    // on the Sign In screen instead of the home screen
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === '1') {
+      var frame = document.getElementById('chatbot-frame');
+      frame.src = frame.src + '&section=auth';
     }
   </script>
 
