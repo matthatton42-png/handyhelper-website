@@ -827,22 +827,8 @@ function copyEmail() {
       var shortName = email.split('@')[0];
       navCta.innerHTML = '👤 &nbsp;' + shortName;
       navCta.href = '/chat.html';
-      navCta.title = 'Signed in as ' + email;
-      navCta.style.cssText = 'background:rgba(232,82,26,0.12); color:#F5F0E8 !important; border:1px solid rgba(232,82,26,0.5); padding:8px 16px; border-radius:4px; font-size:13px;';
-
-      // Add a sign-out option on click
-      navCta.addEventListener('click', function(e) {
-        e.preventDefault();
-        var choice = confirm('Signed in as ' + email + '\n\nClick OK to open your account, or Cancel to sign out.');
-        if (choice) {
-          window.location.href = '/chat.html';
-        } else {
-          localStorage.removeItem('hh_user_email');
-          navCta.innerHTML = '👤 Sign In / Create Account';
-          navCta.href = '/chat.html?auth=1';
-          navCta.style.cssText = 'background:transparent; border:1px solid rgba(232,82,26,0.5); color:var(--cream) !important; padding:8px 16px; border-radius:4px; font-size:13px;';
-        }
-      });
+      navCta.title = 'Signed in as ' + email + ' — click to open your account';
+      navCta.style.cssText = 'background:rgba(232,82,26,0.12); color:#F5F0E8 !important; border:1px solid rgba(232,82,26,0.5); padding:8px 16px; border-radius:4px; font-size:13px; text-decoration:none;';
     }
   })();
 </script>
