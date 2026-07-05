@@ -814,21 +814,127 @@ function copyEmail() {
   });
 }
 </script>
+<style>
+  /* ── Account dropdown ── */
+  #hh-account-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  #hh-account-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(232,82,26,0.12);
+    color: #F5F0E8 !important;
+    border: 1px solid rgba(232,82,26,0.5);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  #hh-account-btn:hover { background: rgba(232,82,26,0.2); }
+  #hh-account-btn .caret {
+    font-size: 9px;
+    color: rgba(232,82,26,0.7);
+    margin-left: 2px;
+    transition: transform 0.2s;
+  }
+  #hh-account-btn.open .caret { transform: rotate(180deg); }
+  #hh-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 180px;
+    background: #2C2520;
+    border: 1px solid rgba(232,82,26,0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 9999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  #hh-dropdown.open { display: block; }
+  .hh-drop-header {
+    padding: 10px 14px 8px;
+    font-size: 11px;
+    color: #8A7E76;
+    border-bottom: 1px solid rgba(232,82,26,0.15);
+    word-break: break-all;
+  }
+  .hh-drop-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #F5F0E8;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .hh-drop-item:hover { background: rgba(232,82,26,0.1); }
+  .hh-drop-item.danger { color: #e74c3c; }
+  .hh-drop-item.danger:hover { background: rgba(231,76,60,0.1); }
+</style>
+
 <script>
-  // Check if the user is signed in (email stored by chat.html from the Streamlit app)
-  // chat.html and index.html share localStorage since they're on the same domain
   (function() {
     var email = localStorage.getItem('hh_user_email');
     var navCta = document.querySelector('a.nav-cta');
     if (!navCta) return;
 
     if (email) {
-      // Show signed-in user with their name in the nav
       var shortName = email.split('@')[0];
-      navCta.innerHTML = '👤 &nbsp;' + shortName;
-      navCta.href = '/chat.html';
-      navCta.title = 'Signed in as ' + email + ' — click to open your account';
-      navCta.style.cssText = 'background:rgba(232,82,26,0.12); color:#F5F0E8 !important; border:1px solid rgba(232,82,26,0.5); padding:8px 16px; border-radius:4px; font-size:13px; text-decoration:none;';
+      var parent = navCta.parentElement;
+
+      // Build the account button + dropdown wrapper
+      var wrap = document.createElement('div');
+      wrap.id = 'hh-account-wrap';
+
+      var btn = document.createElement('button');
+      btn.id = 'hh-account-btn';
+      btn.innerHTML = '👤 &nbsp;' + shortName + ' <span class="caret">▼</span>';
+
+      var dropdown = document.createElement('div');
+      dropdown.id = 'hh-dropdown';
+      dropdown.innerHTML =
+        '<div class="hh-drop-header">Signed in as<br><strong style="color:#F5F0E8;">' + email + '</strong></div>' +
+        '<a class="hh-drop-item" href="/chat.html">💬 &nbsp;Open Chatbot</a>' +
+        '<a class="hh-drop-item" href="/projects.html">🗓️ &nbsp;Project Manager</a>' +
+        '<button class="hh-drop-item danger" id="hh-signout-btn">↩️ &nbsp;Sign Out</button>';
+
+      wrap.appendChild(btn);
+      wrap.appendChild(dropdown);
+      parent.replaceChild(wrap, navCta);
+
+      // Toggle dropdown on button click
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dropdown.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function() {
+        dropdown.classList.remove('open');
+        btn.classList.remove('open');
+      });
+
+      // Sign out
+      document.getElementById('hh-signout-btn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        localStorage.removeItem('hh_user_email');
+        // Navigate to chat.html?auth=1 so the Streamlit app also signs out
+        window.location.href = '/chat.html?signout=1';
+      });
     }
   })();
 </script>

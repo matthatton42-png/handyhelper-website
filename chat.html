@@ -125,6 +125,10 @@
     if (params.get('auth') === '1') {
       frame.src = frame.src + '&section=auth';
     }
+    // If website sign-out triggered, pass signout param to Streamlit
+    if (params.get('signout') === '1') {
+      frame.src = frame.src + '&section=signout';
+    }
 
     // Listen for messages from the embedded Streamlit app
     window.addEventListener('message', function(e) {
