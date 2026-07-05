@@ -63,7 +63,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
 .btn-secondary { background: transparent; color: var(--cream); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 15px; border: 1px solid rgba(245,240,232,0.2); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
 .btn-secondary:hover { border-color: rgba(245,240,232,0.5); }
-.hero-chatbot { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 560px; display: flex; flex-direction: column; }
+.hero-chatbot { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 680px; display: flex; flex-direction: column; }
 .hero-chatbot-header { background: var(--dark-3); padding: 14px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
 .chat-avatar { width: 36px; height: 36px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: white; flex-shrink: 0; }
 .chat-name { font-weight: 500; font-size: 14px; }
@@ -87,7 +87,7 @@ section { padding: 80px 2rem; }
 .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 .chatbot-section { background: var(--dark-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .chatbot-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-.chatbot-frame { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 600px; }
+.chatbot-frame { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; height: 720px; }
 .chatbot-frame iframe { width: 100%; height: 100%; border: none; border-radius: 8px; }
 .guides-section { background: var(--dark); }
 .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
@@ -222,45 +222,72 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <a href="#community">Community</a>
     <a href="#shortcut">Get the App</a>
     <a href="#contact">Contact</a>
-    <a href="#chat" class="nav-cta">Try for Free</a>
+    <a href="#chat" class="nav-cta" style="background:transparent; border:1px solid rgba(232,82,26,0.5); font-size:13px;">👤 Sign In / Create Account</a>
   </div>
 </nav>
 
 <section id="top" style="padding-top: 0;">
   <div class="hero">
     <div>
-      <div class="hero-badge"><div class="badge-dot"></div>AI-POWERED DIY ASSISTANT</div>
-      <h1>Fix It <span class="accent">Yourself.</span> We Help.</h1>
-      <p>Your 24/7 AI-powered home repair assistant. Get expert guidance on any DIY project — from leaky faucets to full renovations — instantly.</p>
+      <div class="hero-badge"><div class="badge-dot"></div>AI-POWERED HOME IMPROVEMENT PLATFORM</div>
+      <h1>Everything Your <span class="accent">Home Needs.</span></h1>
+      <p>From quick DIY fixes to full renovations — Handy Helper gives homeowners and contractors the tools, guidance, and confidence to tackle any project.</p>
       <div class="hero-actions">
-        <a href="#chat" class="btn-primary">Ask Handy Helper ↗</a>
+        <a href="#chat" class="btn-primary">Try Handy Helper Free ↗</a>
         <a href="#shortcut" class="btn-secondary">Get the App</a>
       </div>
-      <div style="margin-top:1.75rem;">
-        <div style="font-size:11px; font-family:'DM Mono',monospace; letter-spacing:1px; color:var(--orange-light); margin-bottom:0.6rem;">// NEW — TRUST BUILT INTO EVERY JOB</div>
-        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <a href="#verify" style="display:flex; align-items:flex-start; gap:10px; background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25); border-radius:8px; padding:12px 14px; text-decoration:none; max-width:230px; transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'" onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
-            <span style="font-size:20px; line-height:1;">🏠👋</span>
-            <span>
-              <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Pay With Confidence</span>
-              <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">Verify completed work before you pay</span>
-            </span>
-          </a>
-          <a href="#verify" style="display:flex; align-items:flex-start; gap:10px; background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25); border-radius:8px; padding:12px 14px; text-decoration:none; max-width:230px; transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'" onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
-            <span style="font-size:20px; line-height:1;">🚐👋</span>
-            <span>
-              <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Completed With Pride</span>
-              <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">Contractors document every stage</span>
-            </span>
-          </a>
-          <a href="#projects" style="display:flex; align-items:flex-start; gap:10px; background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25); border-radius:8px; padding:12px 14px; text-decoration:none; max-width:230px; transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'" onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
-            <span style="font-size:20px; line-height:1;">🏗️</span>
-            <span>
-              <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Project Manager</span>
-              <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">Manage your full renovation from start to finish</span>
-            </span>
-          </a>
-        </div>
+
+      <!-- Four equal feature pills -->
+      <div style="margin-top:1.75rem; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+
+        <a href="#chat" style="display:flex; align-items:flex-start; gap:10px;
+            background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25);
+            border-radius:8px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s;"
+           onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'"
+           onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
+          <span style="font-size:22px; line-height:1; flex-shrink:0;">🔧</span>
+          <span>
+            <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Fix It Yourself</span>
+            <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">AI guidance across 50+ home repair categories, 24/7</span>
+          </span>
+        </a>
+
+        <a href="#verify" style="display:flex; align-items:flex-start; gap:10px;
+            background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25);
+            border-radius:8px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s;"
+           onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'"
+           onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
+          <span style="font-size:22px; line-height:1; flex-shrink:0;">🏠👋</span>
+          <span>
+            <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Pay With Confidence</span>
+            <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">AI verifies completed work before you release payment</span>
+          </span>
+        </a>
+
+        <a href="#verify" style="display:flex; align-items:flex-start; gap:10px;
+            background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25);
+            border-radius:8px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s;"
+           onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'"
+           onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
+          <span style="font-size:22px; line-height:1; flex-shrink:0;">🚐👋</span>
+          <span>
+            <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Completed With Pride</span>
+            <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">Contractors document every stage with AI-verified photos</span>
+          </span>
+        </a>
+
+        <a href="#projects" style="display:flex; align-items:flex-start; gap:10px;
+            background:rgba(232,82,26,0.08); border:1px solid rgba(232,82,26,0.25);
+            border-radius:8px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s;"
+           onmouseover="this.style.borderColor='rgba(232,82,26,0.6)'"
+           onmouseout="this.style.borderColor='rgba(232,82,26,0.25)'">
+          <span style="font-size:22px; line-height:1; flex-shrink:0;">🗓️</span>
+          <span>
+            <span style="display:block; font-size:13px; color:#F5F0E8; font-weight:600; margin-bottom:2px;">Project Manager</span>
+            <span style="display:block; font-size:11px; color:var(--text-muted); line-height:1.4;">Track full renovations phase by phase with AI at every step</span>
+          </span>
+        </a>
+
       </div>
     </div>
     <div class="hero-chatbot">
